@@ -1,0 +1,12 @@
+Recommended poster-pose creation order:
+1) 57 slip_and_fall
+2) 35 turn_away_and_sulk
+3) 49 march_away_angry
+4) 29 run_away
+5) 30 hard_brake
+6) 31 cry_loudly
+7) 41 stomp_one_foot
+8) 60 sprint_across_frame
+9) 15 big_clap
+10) 02 flapping_celebration
+Then continue through the remaining actions.

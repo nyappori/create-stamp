@@ -1,127 +1,70 @@
-# Duck Sticker Pack v4
+# Duck Sticker Pack v5
 
-前回の壊れた assets を使わない完全修正版です。
+v4.2 をベースに、**60動作それぞれの決めポーズ用プロンプト**を追加した版です。
 
-## 重要な修正
+## 今回追加したもの
 
-- キャラクターシートの白背景を雑に透明化する処理を廃止。
-- `よこ` / `うしろ` / `基本4方向` などの文字が参照画像に入らないよう、個別PNG化。
-- 背景は動画参照用に #00FF00 の均一グリーンへ正規化。
-- 影・床・ラベルを参照画像に含めない。
-- 01 / 02 / 15 / 51 / 57 / 60 は、実際に生成した動画から良い瞬間を抜いて「決めポーズ画像」を作成。
-- OpenRouterには同じ決めポーズ画像を `first_frame` と `last_frame` の両方へ渡す。
-  → 最初と最後を同じリアクションに寄せる。
-- プロンプトでも「画面外に消えない」「棒立ちに戻らない」「同じ決めポーズで終わる」を明示。
+- `prompts/poster_pose_design_60.csv`
+  - 60動作分の設計表
+- `prompts/poster_pose_design_60.md`
+  - 人間が読みやすい一覧
+- `prompts/poster_pose_prompts/*.txt`
+  - 60個の決めポーズ画像生成用プロンプト
+- `prompts/video_prompts/*.txt`
+  - 60個の動画生成用フルプロンプト（common + action）
+- `scripts/check_poster_assets.py`
+  - 60個の決めポーズPNGが揃ったか確認する補助スクリプト
 
-## GitHubへpush
+## ポイント
 
-このZIPの `assets/` を以下へそのまま配置してください。
+今回のZIPは **60枚の画像そのものを一括生成したものではありません**。
+代わりに、60枚の決めポーズPNGを順番に作るための
+**設計表 + 個別プロンプト60本** をまとめています。
 
-`https://github.com/nyappori/create-stamp/tree/main/assets`
+理由:
+- 60枚すべてをいきなり本番品質で作るのは重い
+- まず設計を固めた方が後の手戻りが少ない
+- OpenRouter / 画像生成AI / ChatGPT Image などで順次作れる
 
-`.env`:
+## おすすめの使い方
 
-```env
-OPENROUTER_API_KEY=...
-FIRST_FRAME_BASE_URL=https://raw.githubusercontent.com/nyappori/create-stamp/main/assets
-OPENROUTER_MODEL=bytedance/seedance-2.0:free
-OPENROUTER_VIDEO_DURATION=4
-OPENROUTER_VIDEO_RESOLUTION=720p
-OPENROUTER_VIDEO_ASPECT_RATIO=1:1
-OPENROUTER_POLL_INTERVAL=8
-OPENROUTER_SLEEP_BETWEEN_JOBS=3
-```
+### 1. まずは優先度の高い決めポーズから作る
+おすすめ順:
+- 57 slip_and_fall
+- 35 turn_away_and_sulk
+- 49 march_away_angry
+- 29 run_away
+- 30 hard_brake
+- 31 cry_loudly
+- 41 stomp_one_foot
+- 60 sprint_across_frame
 
-## 60番だけ再テスト
+### 2. 決めポーズPNGのファイル名は設計表どおりにする
+例:
+- `01_big_jump_pose.png`
+- `02_flapping_celebration_pose.png`
+- `60_sprint_across_frame_pose.png`
 
+### 3. PNGが揃ったら確認
 ```bat
-py scripts/openrouter_seedance_batch_v4.py --only-ids 60 --out-dir ./out_v4_test
+py scripts/check_poster_assets.py --assets-dir ./assets_generated
 ```
 
-実行時に次の2行が同じ `60_sprint_pose.png` ならOKです。
+### 4. 動画生成時は、そのPNGを first_frame / last_frame に使う
+既存の `openrouter_seedance_batch_v4.py` を土台に、
+実際の `first_frame_image` / `last_frame_image` を差し替えていく運用を想定しています。
 
-```text
-first_frame: .../60_sprint_pose.png
-last_frame : .../60_sprint_pose.png
-```
+## 既存v4.2ファイルについて
 
-## 60個のポスター画像について
+- `common_prompt_v4.txt`
+- `actions_v4.csv`
+- `openrouter_seedance_batch_v4.py`
+- `prepare_line_frames_v2.py`
 
-現在、専用の決めポーズを確定済みなのは主にテスト済みの
-`01 / 02 / 15 / 51 / 57 / 60` です。
+はそのまま残しています。
 
-その他のIDはまず向きに合った綺麗なベース画像を割り当てています。
-良い動画が生成できたら、以下でその動画のベスト瞬間を新しい決めポーズPNGにできます。
+## 備考
 
-```bat
-py scripts/extract_poster_asset.py out_v4/31_cry_loudly.mp4 --time 2.2 --output assets/31_cry_pose.png
-```
-
-その後 `prompts/actions_v4.csv` の
-`first_frame_image` と `last_frame_image` を `31_cry_pose.png` に変更すると、
-以後はその決めポーズから始まり、同じ決めポーズへ戻る生成ができます。
-
-## LINE用APNG
-
-最終的には
-`決めポーズ → 動画 → 同じ決めポーズ`
-にします。
-
-```bat
-py scripts/prepare_line_frames.py out_v4_test/60_sprint_across_frame.mp4 --poster-time 2.5 --fps 4.5
-```
-
-LINE用の最終フレーム数は20以下に調整してください。
-
-
-## v4.1追加修正
-
-- `assets/front_bow_pose.png` の左側に混入していた白線を除去。完全に描き直したクリーン版へ差し替え。
-- `assets/back_sulk_pose.png` に混入していた白い謎エフェクトを除去。今回はまず破綻しないよう、クリーンな背面ポーズ版へ差し替え。
-  - 将来的に「より sulk 感のある背面決めポーズ」が必要なら、良い動画フレームから再抽出してください。
-- その他ファイルは v4 と同じです。
-
-
-## v4.2 修正
-
-### back_sulk_pose.png
-旧 `back_sulk_pose.png` は白い謎エフェクトが混入していたため完全削除しました。
-
-ID 35 / 49 は当面:
-- first_frame_image = back_neutral.png
-- last_frame_image = back_neutral.png
-
-を使います。
-
-これは「壊れた決めポーズを使うより安全」を優先した暫定対応です。
-35 / 49 の動画から良い背面いじけ・怒りポーズが生成できたら、
-`extract_poster_asset.py` で専用ポスターPNGを作り、
-`actions_v4.csv` の画像名を差し替えるのが理想です。
-
-### 生成動画の最後が参照ポーズと一致しない問題
-Seedanceへ同じPNGを first_frame / last_frame として渡しても、
-生成結果が最終フレームで完全一致するとは限りません。
-
-そのため `scripts/prepare_line_frames_v2.py` を追加しました。
-
-60番の例:
-
-```bat
-py scripts/prepare_line_frames_v2.py ^
-  out_v4_test/60_sprint_across_frame.mp4 ^
-  --poster assets/60_sprint_pose.png ^
-  --start 0.1 ^
-  --end 3.9 ^
-  --fps 4
-```
-
-最終出力は必ず:
-
-1. `001.png` = 60_sprint_pose.png
-2. 中間 = 動画
-3. 最後 = 001.png と同じ決めポーズ
-
-になります。
-
-これにより、LINEトーク上の静止表示とアニメーション終了時を
-確実に同じリアクションポーズへできます。
+- 51番のお辞儀は **正面向き** 前提で設計済みです。
+- 却下候補の動き案は後で再利用できるよう、元の `actions_original_60.csv` も残しています。
+- 将来、良い動画ができたら `extract_poster_asset.py` でその瞬間から決めポーズPNGを作る方法も使えます。
