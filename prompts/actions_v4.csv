@@ -1,0 +1,116 @@
+id,group,name,first_frame_image,last_frame_image,poster_type,action_prompt
+01,video1,big_jump,01_big_jump_pose.png,01_big_jump_pose.png,specific,"Front view only.
+The input image shows the duck at the joyful airborne peak of a jump.
+Start from that exact airborne pose.
+The duck descends, lands on both feet, compresses softly on impact, crouches to build energy,
+then makes one very high joyful vertical jump and returns to the SAME airborne poster pose.
+Both wings are raised during the jump.
+End on the same airborne pose and hold briefly."
+02,video1,flapping_celebration,02_flapping_pose.png,02_flapping_pose.png,specific,"Front view only.
+Start from the happy wings-open poster pose in the input image.
+The duck stays on the ground and flaps both wings widely and rapidly several times,
+with a cheerful full-body sway.
+Do not jump.
+Return to the SAME wings-open happy poster pose at the end and hold briefly."
+03,video1,fast_happy_steps,threeq_neutral.png,threeq_neutral.png,base,Three-quarter front view. The duck happily does very fast alternating foot taps in place. The body bounces rhythmically. End with one foot slightly lifted.
+04,video1,full_spin,threeq_neutral.png,threeq_neutral.png,base,"Full-body view. The duck performs one energetic 360-degree spin, clearly showing front, side, back, opposite side, and front again. End facing front."
+05,video1,tail_wiggle,back_neutral.png,back_neutral.png,base,"Back view only. The duck wiggles its rounded tail and hips left and right several times, then looks back over one shoulder toward the viewer with a pleased expression."
+06,video1,victory_pose,front_happy.png,front_happy.png,base,Front view only. The duck dramatically raises both wings high overhead like a victory pose and bounces the whole body twice without leaving the ground. End smiling with both wings up.
+07,video1,cheerful_step_dance,side_neutral.png,side_neutral.png,base,Side view only. The duck performs an exaggerated cheerful stepping dance with alternating high steps. No jumping. End in a lively pose with one foot forward.
+08,video1,run_toward_camera,front_happy.png,front_happy.png,base,"Front-facing depth movement. The duck starts a little farther away, then runs enthusiastically straight toward the camera, becoming larger as it approaches, and stops before leaving the frame."
+09,video1,lying_kick_flap,front_neutral.png,front_neutral.png,base,"Three-quarter full-body view. The duck lies on its back and happily kicks both feet and flaps both wings wildly, rolling slightly from side to side, then pauses in a spread-out happy pose."
+10,video1,proud_pose,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck takes one confident step forward, puffs out its chest dramatically, lifts its chin slightly, and ends in a proud pose."
+11,video2,full_body_laugh,front_happy.png,front_happy.png,base,"Three-quarter front view. The duck suddenly bursts into laughter, leans far backward, then bends forward while laughing, then leans back again. End in a big laughing pose."
+12,video2,rolling_laugh,side_neutral.png,side_neutral.png,base,"Side view only. The duck laughs so hard that it loses balance, falls sideways, rolls once on the ground, and ends lying on its back still laughing."
+13,video2,tears_of_laughter,front_happy.png,front_happy.png,base,Front view only. The duck laughs loudly while swinging its whole body dramatically left and right. Large tears fly outward from both eyes.
+14,video2,giggle_cover_mouth,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck covers its mouth with one wing and quietly giggles, bending forward slightly and shaking the shoulders. Then it glances toward the viewer."
+15,video2,big_clap,15_clap_pose.png,15_clap_pose.png,specific,"Front view only.
+Start from the happy clap poster pose in the input image, with both wings together in front.
+Open both wings widely, clap them together three times with clear large motions,
+then return to the SAME wings-together poster pose.
+Keep both feet on the ground.
+Hold the final matching poster pose briefly."
+16,video2,self_hug,front_happy.png,front_happy.png,base,Front view only. The duck wraps both wings around its own body in a tight self-hug and sways happily from side to side.
+17,video2,pull_to_chest,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck reaches both wings forward as if receiving something precious, then pulls it dramatically toward the chest and holds it lovingly. Do not generate any object."
+18,video2,come_for_hug,front_happy.png,front_happy.png,base,"Front view only. The duck starts slightly farther away, opens both wings very wide, and rushes toward the camera as if coming in for a hug. Stop before reaching the camera."
+19,video2,squish_cheeks,front_happy.png,front_happy.png,base,"Front view only. The duck raises both wings to its face, squeezes both cheeks, then tilts its head right and left with a delighted expression."
+20,video2,spin_and_pose,threeq_neutral.png,threeq_neutral.png,base,"Start facing away from the viewer. The duck spins around quickly through side and three-quarter views, then faces front and finishes with one wing raised and one foot forward in a cheerful pose."
+21,video3,frozen_shock,front_neutral.png,front_neutral.png,base,"Front view only. The duck suddenly jolts in surprise, opens its wings slightly, widens the eyes and mouth, and then becomes completely frozen with only a tiny trembling motion."
+22,video3,step_back_in_shock,threeq_neutral.png,threeq_neutral.png,base,Three-quarter front view. The duck recoils backward in shock and takes three large alternating steps backward while holding both wings forward defensively.
+23,video3,astonished_wings_open,front_neutral.png,front_neutral.png,base,"Front view only. The duck briefly compresses its body, then suddenly spreads both wings to maximum width and leans the head and chest dramatically backward in astonishment. Hold the pose."
+24,video3,look_left_right,front_neutral.png,front_neutral.png,base,"Front view only. The duck rapidly looks left, right, left, and right. Rotate not only the head but slightly the whole torso. Finish facing front with both wings slightly open."
+25,video3,anxious_turning,threeq_neutral.png,threeq_neutral.png,base,"Full-body view. The duck nervously tries to move right, suddenly changes direction left, then right again, and makes a confused half-turn while flapping the wings anxiously."
+26,video3,panic_hold_head,front_neutral.png,front_neutral.png,base,"Front view only. The duck quickly raises both wings to the sides of its head, holds the head in panic, crouches deeply, and sways the whole body left and right."
+27,video3,dizzy_stagger,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck staggers dramatically like it is dizzy, leaning far right and far left, awkwardly crossing the feet while trying to keep balance."
+28,video3,fall_on_bottom,front_neutral.png,front_neutral.png,base,"Front view only. The duck suddenly recoils in shock, lifts both feet forward slightly, and falls heavily onto its bottom. End sitting on the ground with a stunned expression."
+29,video3,run_away,side_neutral.png,side_neutral.png,base,"Side view only. The duck glances backward in fear, then sprints extremely fast across the screen with exaggerated long leg movements and wings trailing backward."
+30,video3,hard_brake,side_neutral.png,side_neutral.png,base,"Side view only. The duck begins running fast, suddenly brakes hard with both feet extended forward, pitches the upper body forward, nearly falls face-first, then flaps its wings to recover balance."
+31,video4,cry_loudly,front_neutral.png,front_neutral.png,base,"Front view only. The duck suddenly begins crying loudly, opens the mouth wide, releases large visible tears from both eyes, and bounces the entire body strongly up and down while sobbing."
+32,video4,sit_and_sob,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck slowly lowers the body, sits on the ground, brings both wings inward, bows the head slightly, and quietly sobs with small shoulder movements."
+33,video4,collapse_flat,side_neutral.png,side_neutral.png,base,"Side view only. The duck gradually loses all strength, lowers the head, buckles the legs, and collapses belly-first onto the ground until the entire body lies flat and exhausted."
+34,video4,sad_walk,side_neutral.png,side_neutral.png,base,"Side view only. The duck walks slowly across the screen with the head hanging low, feet dragging, wings hanging loosely, and a deeply discouraged posture."
+35,video4,turn_away_and_sulk,back_sulk_pose.png,back_sulk_pose.png,specific,"Back view only.
+Start from the sulking back-facing poster pose in the input image.
+The duck stays crouched and sulky, slowly peeks back over one shoulder,
+briefly turns away again, and makes a small annoyed body wiggle.
+Return to the SAME back-facing sulking poster pose at the end and hold briefly."
+36,video4,wipe_tears,front_neutral.png,front_neutral.png,base,"Front view only. The duck wipes one eye strongly with the right wing, wipes the other eye with the left wing, then covers the face with both wings before revealing a sad expression."
+37,video4,slow_collapse,front_neutral.png,front_neutral.png,base,"Front view only. The duck gradually loses strength from head to feet, lets the wings droop, bends the knees, and slowly collapses straight downward into a seated exhausted pose."
+38,video4,big_yawn_and_stretch,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck makes one huge yawn, stretches both wings high overhead, rises onto the toes, and elongates the entire body upward in a dramatic full-body stretch."
+39,video4,dozing_off_standing,front_neutral.png,front_neutral.png,base,"Front view only. The duck becomes sleepy while standing, slowly tilts the head right, recovers, tilts left, recovers again, then lets the head fall forward and gently sways."
+40,video4,lie_down_sleep,side_neutral.png,side_neutral.png,base,"Side view only. The duck makes a large yawn, crouches down, curls its body, lies down on the ground, and immediately falls asleep. End with a subtle breathing motion."
+41,video5,stomp_one_foot,front_neutral.png,front_neutral.png,base,Front view only. The duck angrily raises one foot high and stomps the ground hard twice. Let the whole body bounce slightly with each impact.
+42,video5,spread_wings_threat,front_neutral.png,front_neutral.png,base,"Front view only. The duck briefly compresses the body, suddenly spreads both wings to maximum width, puffs out the chest, and takes one intimidating step toward the viewer."
+43,video5,trembling_anger,front_neutral.png,front_neutral.png,base,"Front view only. The duck trembles rapidly with the entire body in restrained anger, keeping both wings tight against the sides, then suddenly stops and glares at the viewer."
+44,video5,thrust_beak_forward,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck thrusts the head, neck, chest, and beak aggressively forward and takes two strong steps toward the camera, ending very close to the viewer."
+45,video5,angry_protest,front_neutral.png,front_neutral.png,base,"Front view only. The duck swings the right wing dramatically forward, then the left wing, alternating several times while twisting the torso in angry protest."
+46,video5,turn_head_hmph,front_neutral.png,front_neutral.png,base,"Front view only. The duck keeps the torso facing forward but sharply turns only the head to one side in a strong hmph motion, partially returns, then turns away again."
+47,video5,turn_back_completely,back_neutral.png,back_neutral.png,specific,"Start from the back-facing poster pose shown in the input image.
+The duck briefly turns toward the viewer with an annoyed expression,
+makes one small angry stomp, then turns its entire body back around.
+Return to the SAME full back-facing poster pose and hold briefly."
+48,video5,shake_head_no,front_neutral.png,front_neutral.png,base,"Front view only. The duck shakes the head very strongly left and right several times in a clear refusal gesture. Let the torso follow slightly, then finish facing front with both wings held forward."
+49,video5,march_away_angry,back_sulk_pose.png,back_sulk_pose.png,specific,"Start from the back-facing annoyed poster pose.
+The duck makes several exaggerated heavy angry marching steps while remaining inside the frame,
+briefly glances back over one shoulder, then returns to the original position.
+End in the SAME back-facing annoyed poster pose and hold briefly.
+Do not walk out of frame."
+50,video5,hands_on_hips_pose,front_neutral.png,front_neutral.png,base,"Front view only. The duck places both wings firmly at its sides like hands on hips, spreads the feet wide, puffs out the chest, leans slightly forward, and makes one assertive step toward the viewer."
+51,video6,deep_bow,51_bow_pose.png,51_bow_pose.png,specific,"Front view only.
+The input image shows the representative polite bow pose.
+Start from that exact bow pose.
+Rise slightly, then make one deeper polite bow, hold the deepest point briefly,
+and return to the SAME representative bow pose shown in the input image.
+Do not end standing upright.
+Hold the matching bow pose briefly at the end."
+52,video6,strong_nod,front_neutral.png,front_neutral.png,base,Front view only. The duck makes three very strong exaggerated nods using not only the head but the chest and whole upper body. Keep both feet on the ground and finish with one deep decisive nod.
+53,video6,tilt_head_curious,front_neutral.png,front_neutral.png,base,"Front view only. The duck tilts the head and upper body dramatically to the right, returns to center, then tilts dramatically to the left, ending with a curious expression and slightly open wings."
+54,video6,sneak_walk,side_neutral.png,side_neutral.png,base,"Side view only. The duck sneaks forward quietly with exaggerated high, slow steps while keeping the body low and leaning slightly forward. Pause with one foot lifted as if checking whether anyone noticed."
+55,video6,peek_over_shoulder,back_neutral.png,back_neutral.png,base,"Back view only. The duck keeps the back facing the viewer, slowly peeks over one shoulder, hides again, then peeks over the opposite shoulder. Finish with only part of the face visible."
+56,video6,point_with_wing,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck suddenly notices something off to one side, turns the gaze toward it, stretches one wing strongly in that direction, and leans the entire body toward the discovered point. Use the natural duck wing, not a human hand or finger."
+57,video6,slip_and_fall,57_slip_pose.png,57_slip_pose.png,specific,"Use the same viewing angle as the input image.
+The input image shows the representative moment of losing balance.
+Start from that exact slipping pose.
+The duck briefly regains balance and takes a small step,
+then one foot suddenly slips, the body tilts strongly,
+both wings spread wide in panic, and the duck returns to the SAME slipping poster pose.
+End on that matching pose and hold briefly."
+58,video6,chase_tail,threeq_neutral.png,threeq_neutral.png,base,"Full-body view. The duck notices its own tail, turns the head backward, then chases the tail in a small fast circular path for about two rotations before stopping slightly dizzy."
+59,video6,shake_dry,front_neutral.png,front_neutral.png,base,"Front view only. The duck performs an exaggerated full-body shake like a duck drying itself. Start the shake at the head and let the movement travel visibly through the neck, torso, hips, and tail like a wave. Finish by spreading the wings once."
+60,video6,sprint_across_frame,60_sprint_pose.png,60_sprint_pose.png,specific,"Side view only.
+The input image shows the representative FAST SPRINTING pose.
+Start from that exact dynamic sprinting pose.
+
+The duck performs a very fast sprint cycle with exaggerated long strides.
+The body leans clearly forward.
+The legs stretch widely forward and backward.
+Both wings stream backward.
+The whole body bobs dynamically with the running rhythm.
+
+Keep the duck inside the frame at all times.
+Do NOT let the duck run completely off-screen.
+Do NOT slow down into a walk.
+Do NOT return to a neutral standing pose.
+
+At the end, return to the SAME dynamic sprinting pose shown in the input image and hold it briefly.
+The first and final pose must clearly communicate FAST RUNNING even as a still image."

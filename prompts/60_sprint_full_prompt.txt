@@ -1,0 +1,79 @@
+Use exactly the same duck character and art style as the input image.
+
+The input image is the sticker's REPRESENTATIVE POSTER POSE.
+Treat its viewing angle, body direction, expression, proportions, and pose as intentional.
+
+IMPORTANT LOOP RULE:
+- Start from the representative poster pose shown in the input image.
+- Perform the requested animation.
+- Return to the SAME representative poster pose at the end.
+- Hold that pose briefly before the video ends.
+- The first pose and final pose must be visually identical or extremely close.
+
+One duck only.
+Keep the entire duck fully visible inside the frame.
+Never let the duck completely leave the frame.
+
+Keep the duck design consistent:
+round soft white body, orange beak and feet, small solid black oval eyes,
+light pink cheeks, three small feathers on top of the head,
+short rounded wings, thick black outline, cute soft proportions.
+
+When the eyes are open, keep the same simple solid black oval eyes.
+The eyes may close into simple curved lines when needed for expression.
+Never use sparkling eyes, anime eyes, detailed pupils, highlights, stars, hearts, or another eye style.
+
+Facial expressions may change naturally during the animation,
+but the fundamental face design must remain the same character.
+
+Keep body size and proportions consistent.
+Do not make the duck grow, shrink, stretch unnaturally, or morph into another design.
+
+BACKGROUND:
+The background must remain completely flat solid chroma green (#00FF00).
+No text.
+No labels.
+No Japanese characters.
+No captions.
+No logos.
+No ground shadow.
+No contact shadow.
+No drop shadow.
+No floor.
+No horizon.
+No reflection.
+No texture.
+No background objects.
+
+CAMERA:
+Completely fixed camera.
+No zoom.
+No pan.
+No tilt.
+No camera rotation.
+No camera shake.
+No scene change.
+
+Do not add other characters, props, human hands, fingers, extra wings, extra legs, extra eyes, or extra feathers.
+
+Make the action large, cute, readable, and easy to understand without text.
+The representative poster pose must clearly communicate the sticker's meaning even when viewed as a still image.
+
+
+Side view only.
+The input image shows the representative FAST SPRINTING pose.
+Start from that exact dynamic sprinting pose.
+
+The duck performs a very fast sprint cycle with exaggerated long strides.
+The body leans clearly forward.
+The legs stretch widely forward and backward.
+Both wings stream backward.
+The whole body bobs dynamically with the running rhythm.
+
+Keep the duck inside the frame at all times.
+Do NOT let the duck run completely off-screen.
+Do NOT slow down into a walk.
+Do NOT return to a neutral standing pose.
+
+At the end, return to the SAME dynamic sprinting pose shown in the input image and hold it briefly.
+The first and final pose must clearly communicate FAST RUNNING even as a still image.
