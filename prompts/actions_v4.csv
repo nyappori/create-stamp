@@ -49,7 +49,7 @@ Hold the final matching poster pose briefly."
 32,video4,sit_and_sob,threeq_neutral.png,threeq_neutral.png,base,"Three-quarter front view. The duck slowly lowers the body, sits on the ground, brings both wings inward, bows the head slightly, and quietly sobs with small shoulder movements."
 33,video4,collapse_flat,side_neutral.png,side_neutral.png,base,"Side view only. The duck gradually loses all strength, lowers the head, buckles the legs, and collapses belly-first onto the ground until the entire body lies flat and exhausted."
 34,video4,sad_walk,side_neutral.png,side_neutral.png,base,"Side view only. The duck walks slowly across the screen with the head hanging low, feet dragging, wings hanging loosely, and a deeply discouraged posture."
-35,video4,turn_away_and_sulk,back_sulk_pose.png,back_sulk_pose.png,specific,"Back view only.
+35,video4,turn_away_and_sulk,back_neutral.png,back_neutral.png,clean-base-fallback,"Back view only.
 Start from the sulking back-facing poster pose in the input image.
 The duck stays crouched and sulky, slowly peeks back over one shoulder,
 briefly turns away again, and makes a small annoyed body wiggle.
@@ -70,7 +70,7 @@ The duck briefly turns toward the viewer with an annoyed expression,
 makes one small angry stomp, then turns its entire body back around.
 Return to the SAME full back-facing poster pose and hold briefly."
 48,video5,shake_head_no,front_neutral.png,front_neutral.png,base,"Front view only. The duck shakes the head very strongly left and right several times in a clear refusal gesture. Let the torso follow slightly, then finish facing front with both wings held forward."
-49,video5,march_away_angry,back_sulk_pose.png,back_sulk_pose.png,specific,"Start from the back-facing annoyed poster pose.
+49,video5,march_away_angry,back_neutral.png,back_neutral.png,clean-base-fallback,"Start from the back-facing annoyed poster pose.
 The duck makes several exaggerated heavy angry marching steps while remaining inside the frame,
 briefly glances back over one shoulder, then returns to the original position.
 End in the SAME back-facing annoyed poster pose and hold briefly.

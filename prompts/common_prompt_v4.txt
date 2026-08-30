@@ -58,3 +58,8 @@ Do not add other characters, props, human hands, fingers, extra wings, extra leg
 
 Make the action large, cute, readable, and easy to understand without text.
 The representative poster pose must clearly communicate the sticker's meaning even when viewed as a still image.
+
+FINAL-FRAME NOTE:
+Returning to the input poster pose at the end is strongly preferred.
+However, the final LINE APNG will enforce the exact poster PNG as both the first and final frame during post-processing.
+Therefore prioritize a clean, readable animation while keeping the character fully visible.

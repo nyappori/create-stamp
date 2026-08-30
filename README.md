@@ -72,3 +72,56 @@ py scripts/prepare_line_frames.py out_v4_test/60_sprint_across_frame.mp4 --poste
 ```
 
 LINE用の最終フレーム数は20以下に調整してください。
+
+
+## v4.1追加修正
+
+- `assets/front_bow_pose.png` の左側に混入していた白線を除去。完全に描き直したクリーン版へ差し替え。
+- `assets/back_sulk_pose.png` に混入していた白い謎エフェクトを除去。今回はまず破綻しないよう、クリーンな背面ポーズ版へ差し替え。
+  - 将来的に「より sulk 感のある背面決めポーズ」が必要なら、良い動画フレームから再抽出してください。
+- その他ファイルは v4 と同じです。
+
+
+## v4.2 修正
+
+### back_sulk_pose.png
+旧 `back_sulk_pose.png` は白い謎エフェクトが混入していたため完全削除しました。
+
+ID 35 / 49 は当面:
+- first_frame_image = back_neutral.png
+- last_frame_image = back_neutral.png
+
+を使います。
+
+これは「壊れた決めポーズを使うより安全」を優先した暫定対応です。
+35 / 49 の動画から良い背面いじけ・怒りポーズが生成できたら、
+`extract_poster_asset.py` で専用ポスターPNGを作り、
+`actions_v4.csv` の画像名を差し替えるのが理想です。
+
+### 生成動画の最後が参照ポーズと一致しない問題
+Seedanceへ同じPNGを first_frame / last_frame として渡しても、
+生成結果が最終フレームで完全一致するとは限りません。
+
+そのため `scripts/prepare_line_frames_v2.py` を追加しました。
+
+60番の例:
+
+```bat
+py scripts/prepare_line_frames_v2.py ^
+  out_v4_test/60_sprint_across_frame.mp4 ^
+  --poster assets/60_sprint_pose.png ^
+  --start 0.1 ^
+  --end 3.9 ^
+  --fps 4
+```
+
+最終出力は必ず:
+
+1. `001.png` = 60_sprint_pose.png
+2. 中間 = 動画
+3. 最後 = 001.png と同じ決めポーズ
+
+になります。
+
+これにより、LINEトーク上の静止表示とアニメーション終了時を
+確実に同じリアクションポーズへできます。
