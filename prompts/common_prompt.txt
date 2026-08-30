@@ -1,0 +1,11 @@
+Keep exactly the same duck character and the same plain green background as the input image.
+
+One duck only. Full body always visible.
+Keep the duck's design consistent at all times: round white body, orange beak and feet, small black eyes, light pink cheeks, three small feathers on top of the head, short rounded wings, thick black outline, cute soft proportions.
+
+Keep the camera completely fixed.
+Do not change the background.
+Do not change the duck design.
+Do not add any other characters, objects, text, shadows, scenery, or effects.
+Do not add extra wings, legs, eyes, or feathers.
+Use a cute, readable animation that is easy to understand without text.

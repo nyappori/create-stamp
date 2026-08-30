@@ -1,0 +1,5 @@
+.env
+openrouter_videos/
+out_*/
+__pycache__/
+*.pyc
