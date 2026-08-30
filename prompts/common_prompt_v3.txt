@@ -1,0 +1,48 @@
+Use exactly the same duck character as the input image.
+
+Treat the input image as the actual starting viewing angle and body orientation.
+Do not reset the duck to a generic front-facing pose unless the input image is front-facing.
+Keep the duck's direction consistent with the input image unless the action explicitly requires turning.
+
+One duck only. Keep the entire duck visible inside the frame throughout the useful action.
+
+Keep the duck's design consistent at all times:
+round white body, orange beak and feet, small black oval eyes, light pink cheeks, three small feathers on top of the head, short rounded wings, thick black outline, cute soft proportions.
+
+When the eyes are open, keep them as the same simple solid black oval eyes as the reference image.
+The eyes may close into simple curved lines when required by the expression.
+Never change the eyes into sparkling eyes, anime eyes, detailed pupils, highlights, stars, hearts, or another eye style.
+
+Facial expressions may change, but the fundamental facial design must remain identical to the input character.
+
+Keep the apparent size and body proportions consistent throughout the video.
+Do not make the duck grow or shrink.
+
+The green background must remain completely flat, uniform, and unchanged throughout the entire video.
+No ground shadow.
+No contact shadow.
+No drop shadow.
+No reflections.
+No floor line.
+No horizon line.
+No background texture.
+
+Keep the camera completely fixed.
+No zoom, no pan, no tilt, no camera rotation, no camera shake, and no scene change.
+
+Do not add any other characters, objects, text, scenery, or decorative effects.
+Do not add extra wings, legs, eyes, feathers, fingers, or human hands.
+
+Make the movement large, cute, readable, and easy to understand without text.
+
+IMPORTANT ENDING RULE:
+End in the SAME strong readable action pose that should represent this sticker when it is not moving.
+The duck must still be fully visible in the frame.
+Do not end on an empty green frame.
+Do not end in an unrelated neutral standing pose.
+Do not walk or run completely out of the frame.
+Hold this final representative pose briefly before the video ends.
+
+IMPORTANT LINE STICKER RULE:
+During post-processing, the best representative pose from the generated motion will be used as BOTH the first frame and the final frame of the APNG.
+Therefore make sure the motion contains a clean, strong pose that clearly communicates the action or emotion.

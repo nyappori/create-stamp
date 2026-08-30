@@ -1,82 +1,62 @@
-# OpenRouter Duck Sticker Pack
+# Duck Sticker v3 patch
 
-## セットアップ
+既存の `openrouter_duck_pack` に上書きして使う更新パックです。
 
-### 1. `.env` を作る
+## 変更点
 
-プロジェクト直下で `.env.example` を `.env` にコピーします。
+1. 正面画像1枚だけではなく、向き別4画像を使用
+   - front_neutral.png
+   - threeq_neutral.png
+   - side_neutral.png
+   - back_neutral.png
 
-Windows CMD:
+2. 生成動画は、空画面や棒立ちで終わらず、意味の分かる決めポーズで終わるよう強化。
 
-```bat
-copy .env.example .env
-```
+3. LINE用APNGでは最終的に
+   `決めポーズ → 動作 → 同じ決めポーズ`
+   とする。
+   1フレーム目と最終フレームは同じ画像にする。
 
-PowerShell:
+4. `60 sprint` のような動作は画面外へ完全に消えないよう指示。
+   それでも消えた場合はAPNG化前に画面外へ出る部分をカットする。
 
-```powershell
-Copy-Item .env.example .env
-```
+## GitHub
 
-`.env` を編集します。
+このpatchの `assets/*.png` を以下へpush:
+
+https://github.com/nyappori/create-stamp/tree/main/assets
+
+`.env` は:
 
 ```env
-OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxx
-FIRST_FRAME_URL=https://raw.githubusercontent.com/your-user/your-repo/main/assets/duck_reference_green.png
-OPENROUTER_MODEL=bytedance/seedance-2.0:free
-OPENROUTER_VIDEO_DURATION=4
-OPENROUTER_VIDEO_RESOLUTION=720p
-OPENROUTER_VIDEO_ASPECT_RATIO=1:1
+FIRST_FRAME_BASE_URL=https://raw.githubusercontent.com/nyappori/create-stamp/main/assets
 ```
 
-スクリプトはプロジェクト直下の `.env` を自動読み込みします。追加ライブラリは不要です。
+## 既存フォルダへの適用
 
-`.env` にはAPIキーが入るため、Gitにはコミットしないでください。`.gitignore` に最初から `.env` を追加してあります。
+このZIPを既存 `openrouter_duck_pack` に展開し、同名ファイルは追加/上書き。
 
-### 2. FIRST_FRAME_URLを用意する
+既存の:
+`prompts/actions.csv`
+はそのまま残してください。
 
-`assets/duck_reference_green.png` をpublic GitHubリポジトリなどに置き、Raw URLを `.env` の `FIRST_FRAME_URL` に入れます。
+## テスト
+
+```bat
+py scripts/openrouter_seedance_batch_v3.py --only-ids 02 15 51 57 60 --out-dir ./out_test_v3
+```
+
+## LINE用の決めポーズ処理
 
 例:
 
-```env
-FIRST_FRAME_URL=https://raw.githubusercontent.com/USER/REPO/main/assets/duck_reference_green.png
+```bat
+py scripts/prepare_line_frames.py out_test_v3/60_sprint_across_frame.mp4 --poster-time 2.15 --start 0.1 --end 3.1 --fps 4.5
 ```
 
-## 実行
+生成された `ordered` は:
+- 001.png = 決めポーズ
+- 中間 = アニメ
+- 最後 = 001.png と同じ決めポーズ
 
-利用可能な動画モデルを確認:
-
-```bash
-python scripts/list_video_models.py
-```
-
-まず大ジャンプ1本だけ:
-
-```bash
-python scripts/openrouter_seedance_batch.py --only-ids 01 --out-dir ./out_test
-```
-
-動きの違う5本を試す:
-
-```bash
-python scripts/openrouter_seedance_batch.py --only-ids 01 05 28 51 57 --out-dir ./out_test5
-```
-
-全60本:
-
-```bash
-python scripts/openrouter_seedance_batch.py --out-dir ./out_all
-```
-
-## ファイル構成
-
-- `assets/duck_reference_green.png` : 動画生成用1羽画像
-- `assets/duck_character_sheet.png` : キャラクターシート
-- `prompts/common_prompt.txt` : 共通プロンプト
-- `prompts/actions.csv` : 60動作の個別プロンプト
-- `prompts/sample_prompts.md` : コピペ用サンプル
-- `scripts/list_video_models.py` : モデル確認
-- `scripts/openrouter_seedance_batch.py` : 生成・ポーリング・MP4保存
-- `.env.example` : 設定例
-- `.gitignore` : APIキー誤コミット防止
+最終的に20フレーム以下になるようfps/区間を調整してください。
