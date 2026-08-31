@@ -1,70 +1,54 @@
-# Duck Sticker Pack v5
+# OpenRouter free retry pack v1
 
-v4.2 をベースに、**60動作それぞれの決めポーズ用プロンプト**を追加した版です。
+このZIPは、OpenRouterを使っていた頃のスクリプト・画像・60種プロンプトをまとめ直した再配布パックです。
 
-## 今回追加したもの
+## 含まれるもの
+- scripts/openrouter_seedance_batch_v4.py
+  - 以前の一括実行スクリプト
+- scripts/openrouter_seedance_batch_safe.py
+  - モデル名の exact match と usage.cost を確認し、想定外課金の可能性があれば止める安全版
+- scripts/list_video_models.py
+  - OpenRouter の video model 一覧確認用
+- prompts/video_prompts/*.txt
+  - 01〜60 の個別動画プロンプト
+- prompts/actions_v4.csv
+  - 01〜60 の一覧CSV
+- assets/heroes/*.png
+  - 01〜60 の first/last frame 用ヒーロー画像
+- assets/base/*.png
+  - front/side/bow/sprint などの参考画像・基礎素材
 
-- `prompts/poster_pose_design_60.csv`
-  - 60動作分の設計表
-- `prompts/poster_pose_design_60.md`
-  - 人間が読みやすい一覧
-- `prompts/poster_pose_prompts/*.txt`
-  - 60個の決めポーズ画像生成用プロンプト
-- `prompts/video_prompts/*.txt`
-  - 60個の動画生成用フルプロンプト（common + action）
-- `scripts/check_poster_assets.py`
-  - 60個の決めポーズPNGが揃ったか確認する補助スクリプト
+## 使い方の考え方
+スクリプトはローカル画像を直接送るのではなく、`FIRST_FRAME_BASE_URL` で公開URLを指定して参照します。
+そのため `assets/heroes/` を GitHub などへ置き、raw URL を `.env` に設定して使います。
 
-## ポイント
-
-今回のZIPは **60枚の画像そのものを一括生成したものではありません**。
-代わりに、60枚の決めポーズPNGを順番に作るための
-**設計表 + 個別プロンプト60本** をまとめています。
-
-理由:
-- 60枚すべてをいきなり本番品質で作るのは重い
-- まず設計を固めた方が後の手戻りが少ない
-- OpenRouter / 画像生成AI / ChatGPT Image などで順次作れる
-
-## おすすめの使い方
-
-### 1. まずは優先度の高い決めポーズから作る
-おすすめ順:
-- 57 slip_and_fall
-- 35 turn_away_and_sulk
-- 49 march_away_angry
-- 29 run_away
-- 30 hard_brake
-- 31 cry_loudly
-- 41 stomp_one_foot
-- 60 sprint_across_frame
-
-### 2. 決めポーズPNGのファイル名は設計表どおりにする
 例:
-- `01_big_jump_pose.png`
-- `02_flapping_celebration_pose.png`
-- `60_sprint_across_frame_pose.png`
+FIRST_FRAME_BASE_URL=https://raw.githubusercontent.com/<user>/<repo>/main/assets/heroes
 
-### 3. PNGが揃ったら確認
+## 最低限の手順
+1. ZIPを展開
+2. `.env.example` を `.env` にコピー
+3. `OPENROUTER_API_KEY` を設定
+4. `FIRST_FRAME_BASE_URL` を設定
+5. `OPENROUTER_MODEL` を試したいモデル名に設定
+6. 最初は `openrouter_seedance_batch_safe.py` で 01 だけ試す
+
+## 実行例
+### モデル一覧
 ```bat
-py scripts/check_poster_assets.py --assets-dir ./assets_generated
+py scripts\list_video_models.py
 ```
 
-### 4. 動画生成時は、そのPNGを first_frame / last_frame に使う
-既存の `openrouter_seedance_batch_v4.py` を土台に、
-実際の `first_frame_image` / `last_frame_image` を差し替えていく運用を想定しています。
+### 安全版で1件テスト
+```bat
+py scripts\openrouter_seedance_batch_safe.py --only-ids 01 --out-dir .\out_safe_01
+```
 
-## 既存v4.2ファイルについて
+### 元スクリプトで01〜60
+```bat
+py scripts\openrouter_seedance_batch_v4.py --only-ids 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 --out-dir .\out_01_60
+```
 
-- `common_prompt_v4.txt`
-- `actions_v4.csv`
-- `openrouter_seedance_batch_v4.py`
-- `prepare_line_frames_v2.py`
-
-はそのまま残しています。
-
-## 備考
-
-- 51番のお辞儀は **正面向き** 前提で設計済みです。
-- 却下候補の動き案は後で再利用できるよう、元の `actions_original_60.csv` も残しています。
-- 将来、良い動画ができたら `extract_poster_asset.py` でその瞬間から決めポーズPNGを作る方法も使えます。
+## 注意
+- 以前 `:free` を付けても実際には課金扱いになった可能性があるため、最初は安全版推奨です。
+- `assets/heroes/` のファイル名は `01.png`〜`60.png` です。
